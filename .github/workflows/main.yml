@@ -28,7 +28,7 @@ jobs:
       run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
-    - run: Set-LocalUser -Name "testuser" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd123" -Force)
+    - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd123" -Force)
     - name: Install Positron
       run: |
         Invoke-WebRequest https://cdn.posit.co/positron/prereleases/win/x86_64/Positron-2025.02.0-171-UserSetup.exe -OutFile positron-setup.exe
