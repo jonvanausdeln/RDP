@@ -9,13 +9,6 @@ jobs:
 
 
     steps:
-    - name: Create new user account
-      shell: pwsh
-      run: |
-          $username = "testuser"
-          $password = "P@ssw0rd123"
-          net user $username $password /add
-          net localgroup Administrators $username /add
     - name: Download
       run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
     - name: Extract
