@@ -25,6 +25,6 @@ jobs:
     - name: Install Positron
       run: |
         Invoke-WebRequest https://cdn.posit.co/positron/prereleases/win/x86_64/Positron-2025.02.0-171-UserSetup.exe -OutFile positron-setup.exe
-        Start-Process -FilePath ./positron-setup.exe -ArgumentList "/silent"
+        Start-Process -FilePath ./positron-setup.exe -ArgumentList "/silent" -Wait
     - name: Create Tunnel
       run: .\ngrok\ngrok.exe tcp 3389
